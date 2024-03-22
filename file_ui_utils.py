@@ -148,7 +148,7 @@ def select_images(names):
     ui = UI()     # create UI object for file select dialog
     files = {name:ui.getfile("Choose "+name) for name in names} 
     images = {name:np.array(Image.open(files[name])) for name in names}
-    folder = get_parent(files(names[0])) 
+    folder = get_parent(files[names[0]]) 
     return (files, images, folder) 
 
 # saves images in dict 'images' with keys in 'names' to 'folder'
